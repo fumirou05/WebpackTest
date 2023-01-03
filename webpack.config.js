@@ -1,7 +1,8 @@
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const smp = new SpeedMeasurePlugin();
 const path = require("path");
-const pathLib = require("path");
 
-module.exports = {
+module.exports = smp.wrap({
     // mdoe
     mode: "development",
 
@@ -36,4 +37,4 @@ module.exports = {
             }
         ]
     }
-}
+})
